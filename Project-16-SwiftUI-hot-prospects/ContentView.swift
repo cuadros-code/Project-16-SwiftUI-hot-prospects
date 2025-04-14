@@ -9,28 +9,26 @@ import SwiftUI
 
 struct ContentView: View {
     
-    let users = ["Tohru", "Yuki", "Kyo", "Momiji"]
-    @State private var selection: String?
-    @State private var multipleSelection = Set<String>()
+    @State private var selectedTab = "One"
     
     var body: some View {
-        
-        List(users, id: \.self, selection: $selection) { user in
-            Text(user)
+        TabView(selection: $selectedTab) {
+            
+            Button("Show Tab 2") {
+                selectedTab = "Two"
+            }
+            .tabItem {
+                Label("One", systemImage: "star")
+            }
+            .tag("One")
+            
+            Text("Tab 2")
+                .tabItem {
+                    Label("Two", systemImage: "circle")
+                }
+                .tag("Two")
+            
         }
-        
-        List(users, id: \.self, selection: $multipleSelection) { user in
-            Text(user)
-        }
-        
-        if let selection {
-            Text("Your selected \(selection)")
-        }
-        if multipleSelection.isEmpty == false {
-            Text("Your selected \(multipleSelection.formatted())")
-        }
-        
-        EditButton()
     }
 }
 
