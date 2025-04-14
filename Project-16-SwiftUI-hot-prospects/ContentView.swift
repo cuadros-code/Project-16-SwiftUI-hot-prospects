@@ -8,14 +8,29 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    let users = ["Tohru", "Yuki", "Kyo", "Momiji"]
+    @State private var selection: String?
+    @State private var multipleSelection = Set<String>()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        
+        List(users, id: \.self, selection: $selection) { user in
+            Text(user)
         }
-        .padding()
+        
+        List(users, id: \.self, selection: $multipleSelection) { user in
+            Text(user)
+        }
+        
+        if let selection {
+            Text("Your selected \(selection)")
+        }
+        if multipleSelection.isEmpty == false {
+            Text("Your selected \(multipleSelection.formatted())")
+        }
+        
+        EditButton()
     }
 }
 
