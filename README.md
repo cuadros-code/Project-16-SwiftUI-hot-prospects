@@ -8,3 +8,4 @@
 
 - .contextMenu 
 
+- .swipeActions
