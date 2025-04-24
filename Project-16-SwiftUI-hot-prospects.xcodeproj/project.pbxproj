@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1BC04D782DB8617F00FEC065 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1BC04D772DB8617F00FEC065 /* README.md */; };
+		1BCA0C902DBAC9690045486F /* SamplePackage in Frameworks */ = {isa = PBXBuildFile; productRef = 1BCA0C8F2DBAC9690045486F /* SamplePackage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BCA0C902DBAC9690045486F /* SamplePackage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +73,7 @@
 			);
 			name = "Project-16-SwiftUI-hot-prospects";
 			packageProductDependencies = (
+				1BCA0C8F2DBAC9690045486F /* SamplePackage */,
 			);
 			productName = "Project-16-SwiftUI-hot-prospects";
 			productReference = 1B1E78A62DAD5E1F00879E9F /* Project-16-SwiftUI-hot-prospects.app */;
@@ -100,6 +103,9 @@
 			);
 			mainGroup = 1B1E789D2DAD5E1E00879E9F;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				1BCA0C8E2DBAC9690045486F /* XCRemoteSwiftPackageReference "SamplePackage" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 1B1E78A72DAD5E1F00879E9F /* Products */;
 			projectDirPath = "";
@@ -331,6 +337,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1BCA0C8E2DBAC9690045486F /* XCRemoteSwiftPackageReference "SamplePackage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/SamplePackage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1BCA0C8F2DBAC9690045486F /* SamplePackage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1BCA0C8E2DBAC9690045486F /* XCRemoteSwiftPackageReference "SamplePackage" */;
+			productName = SamplePackage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1B1E789E2DAD5E1E00879E9F /* Project object */;
 }
