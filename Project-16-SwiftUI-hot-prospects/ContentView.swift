@@ -10,7 +10,20 @@ import SwiftUI
 struct ContentView: View {
     
     var body: some View {
-        LocalNotificationsView()
+        TabView {
+            Tab("Everyone", systemImage: "person.3") {
+                ProspectsView(filter: .none)
+            }
+            Tab("Contacted", systemImage: "checkmark.circle") {
+                ProspectsView(filter: .contacted)
+            }
+            Tab("Uncontacted", systemImage: "questionmark.diamond") {
+                ProspectsView(filter: .uncontacted)
+            }
+            Tab("Me", systemImage: "person.crop.square") {
+                MeView()
+            }
+        }
     }
 }
 
