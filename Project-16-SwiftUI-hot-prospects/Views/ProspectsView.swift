@@ -36,26 +36,11 @@ struct ProspectsView: View {
     
     var body: some View {
         NavigationStack {
-            List(prospects, selection: $selectedProspects) { prospect in
-                VStack(alignment: .leading) {
-                    HStack {
-                        Text(prospect.name)
-                            .font(.headline)
-                        if prospect.isContacted {
-                            Image(systemName: "person.fill.checkmark")
-                                .font(.caption)
-                                .foregroundStyle(.green)
-                        } else {
-                            Image(systemName: "person.fill.xmark")
-                                .font(.caption)
-                                .foregroundStyle(.red)
-                        }
-                    }
-                    Text(prospect.emailAddress)
-                        .foregroundStyle(.secondary)
+            List(prospects) { prospect in
+                NavigationLink(value: prospect) {
+                    ProspectListItem(prospect: prospect)
                 }
                 .swipeActions {
-                    
                     Button("Delete", systemImage: "trash", role: .destructive) {
                         modelContext.delete(prospect)
                     }
@@ -88,7 +73,7 @@ struct ProspectsView: View {
                 }
                 
                 ToolbarItem(placement: .topBarLeading) {
-                    EditButton()
+//                    EditButton()
                 }
                 
                 if selectedProspects.isEmpty == false {
@@ -104,6 +89,9 @@ struct ProspectsView: View {
                     simulatedData: "Tom hatson\ntomhatson@hotmail.com",
                     completion: handleScan
                 )
+            }
+            .navigationDestination(for: Prospect.self) { prospect in
+                EditProspectView(prospectToEdit: prospect)
             }
         }
     }
