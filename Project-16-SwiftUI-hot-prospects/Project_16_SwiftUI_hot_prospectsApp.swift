@@ -7,9 +7,17 @@
 
 import SwiftUI
 import SwiftData
+import UserNotifications
 
 @main
 struct Project_16_SwiftUI_hot_prospectsApp: App {
+    
+    let notificationDelegate = NotificationDelegate()
+    
+    init() {
+        UNUserNotificationCenter.current().delegate = notificationDelegate
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

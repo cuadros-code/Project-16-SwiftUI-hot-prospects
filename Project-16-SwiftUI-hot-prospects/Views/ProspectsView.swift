@@ -38,8 +38,19 @@ struct ProspectsView: View {
         NavigationStack {
             List(prospects, selection: $selectedProspects) { prospect in
                 VStack(alignment: .leading) {
-                    Text(prospect.name)
-                        .font(.headline)
+                    HStack {
+                        Text(prospect.name)
+                            .font(.headline)
+                        if prospect.isContacted {
+                            Image(systemName: "person.fill.checkmark")
+                                .font(.caption)
+                                .foregroundStyle(.green)
+                        } else {
+                            Image(systemName: "person.fill.xmark")
+                                .font(.caption)
+                                .foregroundStyle(.red)
+                        }
+                    }
                     Text(prospect.emailAddress)
                         .foregroundStyle(.secondary)
                 }
@@ -147,13 +158,13 @@ struct ProspectsView: View {
             content.sound = UNNotificationSound.default
             
             
-//            var dateComponents = DateComponents()
-//            dateComponents.hour = 9
-//            
-//            let trigger = UNCalendarNotificationTrigger(
-//                dateMatching: dateComponents,
-//                repeats: false
-//            )
+            //            var dateComponents = DateComponents()
+            //            dateComponents.hour = 9
+            //
+            //            let trigger = UNCalendarNotificationTrigger(
+            //                dateMatching: dateComponents,
+            //                repeats: false
+            //            )
             
             let trigger = UNTimeIntervalNotificationTrigger(
                 timeInterval: 5,
