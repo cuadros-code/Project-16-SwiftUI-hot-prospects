@@ -10,16 +10,20 @@ import SwiftData
 import CodeScanner
 import UserNotifications
 
+enum FilterType {
+    case none, contacted, uncontacted
+}
+
 struct ProspectsView: View {
     
     @Environment(\.modelContext) var modelContext
-    @Query(sort: \Prospect.name) var prospects: [Prospect]
     @State private var isShowingScanner = false
     @State private var selectedProspects = Set<Prospect>()
+    @Query(sort: \Prospect.name) var prospects: [Prospect]
     
-    enum FilterType {
-        case none, contacted, uncontacted
-    }
+    @State private var sortOrder = [
+        SortDescriptor(\Prospect.name)
+    ]    
     
     let filter: FilterType
     
@@ -57,14 +61,13 @@ struct ProspectsView: View {
                         .tint(.green)
                         
                         Button("Remind Me", systemImage: "bell") {
-                            addNotification(for: prospect)
+                            // addNotification(for: prospect)
                         }
                         .tint(.orange)
                     }
                 }
                 .tag(prospect)
-            }
-            .navigationTitle(title)
+            }            .navigationTitle(title)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Scan", systemImage: "qrcode.viewfinder") {
@@ -73,7 +76,19 @@ struct ProspectsView: View {
                 }
                 
                 ToolbarItem(placement: .topBarLeading) {
-//                    EditButton()
+                    Menu("Sort", systemImage: "arrow.up.arrow.down") {
+                        Picker("Sort", selection: $sortOrder) {
+                            Text("Sort by Name")
+                                .tag([
+                                    SortDescriptor(\Prospect.name)
+                                ])
+                            
+                            Text("Sort by Email")
+                                .tag([
+                                    SortDescriptor(\Prospect.emailAddress)
+                                ])
+                        }
+                    }
                 }
                 
                 if selectedProspects.isEmpty == false {
@@ -93,13 +108,13 @@ struct ProspectsView: View {
             .navigationDestination(for: Prospect.self) { prospect in
                 EditProspectView(prospectToEdit: prospect)
             }
+            
         }
     }
     
     
     init(filter: FilterType) {
         self.filter = filter
-        
         if filter != .none {
             let showContactedOnly = filter == .contacted
             

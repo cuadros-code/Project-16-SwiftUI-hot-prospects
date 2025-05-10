@@ -8,7 +8,6 @@
 import SwiftUI
 import CoreImage.CIFilterBuiltins
 
-
 struct MeView: View {
     
     @AppStorage("name") private var name = "Anonymous"

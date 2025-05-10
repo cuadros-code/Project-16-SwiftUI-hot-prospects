@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "2361C700-DE9B-44FB-ABBA-2D8336573360"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F8FDF8BA-151D-4A1B-9462-05F7748B467C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../../../var/folders/kn/zq9sglpn0sb1c2cwz_6n1_1m0000gn/T/swift-generated-sources/@__swiftmacro_32Project_16_SwiftUI_hot_prospects8Prospect5ModelfMm_.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2"
+            endingLineNumber = "2"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  uuid = "F8FDF8BA-151D-4A1B-9462-05F7748B467C - 14e4eb7dcb6b3c8d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Project_16_SwiftUI_hot_prospects.Prospect.init(name: Swift.String, emailAddress: Swift.String, isContacted: Swift.Bool) -&gt; Project_16_SwiftUI_hot_prospects.Prospect"
+                  moduleName = "Project-16-SwiftUI-hot-prospects.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///var/folders/kn/zq9sglpn0sb1c2cwz_6n1_1m0000gn/T/-3e857a.@__swiftmacro_32Project_16_SwiftUI_hot_prospects8Prospect5ModelfMm_.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "2"
+                  endingLineNumber = "2">
+               </Location>
+               <Location
+                  uuid = "F8FDF8BA-151D-4A1B-9462-05F7748B467C - 69018cf6fdd4611"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Project_16_SwiftUI_hot_prospects.Prospect.init(backingData: any SwiftData.BackingData&lt;Self.SwiftData.BackingData.Model == Project_16_SwiftUI_hot_prospects.Prospect&gt;) -&gt; Project_16_SwiftUI_hot_prospects.Prospect"
+                  moduleName = "Project-16-SwiftUI-hot-prospects.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///var/folders/kn/zq9sglpn0sb1c2cwz_6n1_1m0000gn/T/-3e857a.@__swiftmacro_32Project_16_SwiftUI_hot_prospects8Prospect5ModelfMm_.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "2"
+                  endingLineNumber = "2">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
